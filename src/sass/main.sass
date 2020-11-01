@@ -1,0 +1,227 @@
+@import '../../node_modules/normalize.css/normalize.css'
+@import './font.scss'
+
+$primary: #2170A1
+$accent: #EE8460
+$white: #fff
+$secondary: #87BDBA
+$bg: #1E5581
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+html
+    font-size: 10px
+    font-family: 'Circe'
+html,
+body
+    overflow: hidden
+
+main
+    background: $bg url('../assets/bg.svg')
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    position: relative
+    width: 192rem
+    height: 108rem
+    overflow: hidden
+.mountainName
+    text-align: center
+    cursor: pointer
+    z-index: 10
+    position: absolute
+    transition: .3s ease
+    font-weight: bold
+    font-size: 2.4rem
+    text-transform: uppercase
+    line-height: 4.5rem
+    color: $white
+    letter-spacing: 0.015em
+    padding: 0 3rem
+    background: $secondary
+    border-radius: 2.5rem
+    bottom: -7rem
+.mountainItem
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    max-height: 30rem
+    height: auto
+    transition: .3s ease
+    position: absolute
+    cursor: pointer
+    &:hover .mountainName, &:active .mountainName, &:focus .mountainName
+        color: $bg
+.modal
+    position: fixed
+    width: 192rem
+    height: 108rem
+    overflow: hidden
+    background: transparent
+    z-index: 100
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+.backBtn
+    position: fixed
+    z-index: 200
+    left: 6.5rem
+    bottom: 6.5rem
+    width: 7rem
+    height: 7rem
+    background: $accent
+    border-radius: 50%
+    border: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    padding-right: 1rem
+    // transition: .3s ease
+    cursor: pointer
+    outline: none
+    -moz-user-select: none
+    -webkit-user-select: none
+    user-select: none
+    &:hover, &:active, &:focus
+        background: darken($accent, 5%)
+.aboutTitle
+    color: $white
+    font-size: 6.4rem
+    font-weight: normal
+    line-height: 9.5rem
+    letter-spacing: 0.015em
+.info
+    width: 82rem
+    position: absolute
+    right: 0
+    height: 100vh
+    overflow: hidden
+    overflow-block: hidden
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    background: $primary
+    padding: 13rem 10rem 8rem 8rem
+    transition: .66s ease
+.description
+    color: $white
+    font-size: 16px
+    line-height: 24px
+    height: 100%
+    text-align: justify
+    width: 100%
+    font-weight: 300
+    display: flex
+.carousel
+    width: 110rem
+    display: flex
+    position: relative
+    left: 0
+    height: 100vh
+    z-index: 10
+    transition: .33s linear
+    overflow: hidden
+    overflow-block: hidden
+.carouselTrack
+    transform: translateX(0)
+    position: absolute
+    display: flex
+    overflow-block: hidden
+    left: 0
+    top: 0
+    transition: .5s linear
+    height: 100vh
+    img
+        object-fit: cover
+        width: 192rem
+        overflow-block: hidden
+        overflow: hidden
+        background-position: center center
+.carouselDots
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 8rem
+    display: flex
+    align-items: center
+    justify-content: center
+.carouselDotsItem
+    width: 3rem
+    height: 3rem
+    background: transparent
+    border-radius: 50%
+    border: .3rem solid $white
+    margin: 1rem
+    outline: none
+    -moz-user-select: none
+    -webkit-user-select: none
+    -ms-user-select: none
+    user-select: none
+.CarouselFullScreenToggler
+    position: absolute
+    z-index: 200
+    right: 6.5rem
+    bottom: 6.5rem
+    width: 7rem
+    height: 7rem
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $primary
+    border-radius: 50%
+    border: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: .3s ease
+    cursor: pointer
+    outline: none
+    -moz-user-select: none
+    -webkit-user-select: none
+    -ms-user-select: none
+    user-select: none
+    &:hover, &:active, &:focus
+        background: darken($primary, 5%)
+
+.activeDot
+    background-color: $white
+
+.option-enter
+    opacity: 0
+    &.option-enter-active
+        opacity: 1
+        transition: opacity .25s out
+
+.option-appear
+    opacity: 0
+    &.option-appear-active
+        opacity: 1
+        transition: opacity .25s out
+
+.option-leave
+    opacity: 1
+    &.option-leave-active
+        opacity: 0
+        transition: opacity .25s ease-in
+.option-exit
+    opacity: 1
+    &.option-exit-active
+        opacity: 0
+        transition: opacity .25s ease-in
+
+.switchList
+    list-style: none
+    display: flex
+    max-width: 600px
+    li
+        cursor: pointer
+        padding: 1.2rem
+        &:hover svg, &:active svg, &:focus svg
+            fill: $secondary
+::-webkit-scrollbar
+    width: 0px
